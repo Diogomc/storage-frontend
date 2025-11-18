@@ -27,13 +27,13 @@ export const ProductsList = () => {
 
     return (
         <div>
-            <ul>
+            <ul className="flex justify-center m-20 text-white">
                 {products?.map(p => (
-                    <li className="p-3 flex" key={p.productId}>
-                        <p>{p.productName} </p>
-                        <p>{p.batch}</p>
-                        <p>{p.productBrand}</p>
-                        <p>{p.supplierName}</p>
+                    <li className="list p-5 rounded-md m-2" key={p.productId}>
+                        <p>Nome: {p.productName} </p>
+                        <p>Lote: {p.batch}</p>
+                        <p>Marca: {p.productBrand}</p>
+                        <p>Nome do Fornecedor: {p.supplierName}</p>
                         <p>{expiration(p.expirationDate)}</p>
                     </li>
                 ))}              

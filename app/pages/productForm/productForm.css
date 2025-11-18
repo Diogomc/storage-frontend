@@ -1,0 +1,36 @@
+.form-container{
+    width: 100%;
+}
+.input-form{
+    padding: 2px;
+    font-size: 1.2rem;
+    outline: none;
+    border-bottom: 1px solid;
+    margin: 10px;
+    width: 300px;
+}
+.btn-submit{
+    background-color: #1d1c3b;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.input-date{
+    outline: none;
+    border-bottom: 1px solid;
+    width: 620px;
+    padding: 10px;
+    text-align: center;
+}
+.expiration-title{
+    margin-top: 30px;
+}
+.category-select{
+    margin-top: 30px;
+    outline: none;
+    width: 620px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding: 10px;
+}

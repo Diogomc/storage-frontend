@@ -13,5 +13,5 @@ getById: async(id:number): Promise<Product> => {
 create: async(product:Product): Promise<Product> => {
     const {data} = await api.post<Product>("/Product", product)
     return data;
-}
+},
 }

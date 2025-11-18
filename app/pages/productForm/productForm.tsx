@@ -3,6 +3,7 @@ import { CategoryServices } from "@/app/services/CategoryServices";
 import { ProductServices } from "@/app/services/ProductServices";
 import { Category } from "@/app/types/Category";
 import { useEffect, useState } from "react"
+import "@/app/pages/productForm/productForm.css"
 
 interface Props {
     onSave?: () => void
@@ -47,15 +48,17 @@ export const ProductForm = ({ onSave }: Props) => {
         onSave?.();
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center form-container">
             <div>
                 <input
+                    className="input-form"
                     type="text"
                     placeholder="Nome"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input type="text"
+                    className="input-form"
                     placeholder="Fornecedor"
                     value={supplier}
                     onChange={(e) => setSupplier(e.target.value)}
@@ -63,16 +66,29 @@ export const ProductForm = ({ onSave }: Props) => {
             </div>
             <div>
                 <input type="text"
+                    className="input-form"
                     placeholder="Lote"
                     value={batch}
                     onChange={(e) => setBatch(e.target.value)}
                 />
                 <input type="text"
+                    className="input-form"
                     placeholder="Marca"
                     value={brand}
                     onChange={(e) => setBrand(e.target.value)}
                 />
-                <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
+            </div>
+                <div className="flex items-center text-center flex-col">
+                    <p className="expiration-title">Data de Validade: </p>
+                    <input className="input-date"
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                    />
+                </div>
+            <div className="flex items-center">
+
+                <select className="category-select" value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
                     <option value="">Selecione uma Categoria:</option>
                     {categories.map(c => (
                         <option value={c.categoryId} key={c.categoryId}>
@@ -81,14 +97,7 @@ export const ProductForm = ({ onSave }: Props) => {
                     ))}
                 </select>
             </div>
-            <div className="flex">
-                <p>Data de Validade: </p>
-                <input type="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                />
-            </div>
-            <button type="submit">Adicionar Produto</button>
+            <button className="btn-submit" type="submit">Adicionar Produto</button>
         </form>
     )
 }
