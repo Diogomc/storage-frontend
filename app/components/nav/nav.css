@@ -1,0 +1,9 @@
+.nav{
+    background-color: #1d1c3b;
+    color: #fff;
+}
+li a:hover{
+    color: #cccc;
+    transition: 0.4s;
+    border-bottom: 1px solid ;
+}
