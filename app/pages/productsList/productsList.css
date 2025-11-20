@@ -4,3 +4,12 @@ p{
 .list{
     background-color: #456882;
 }
+.delete-button:hover{
+    cursor: pointer;
+    color: red;
+}
+.config-buttons{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
