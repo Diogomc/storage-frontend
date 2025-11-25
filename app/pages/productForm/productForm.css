@@ -1,13 +1,15 @@
 .form-container{
     width: 100%;
+    color: #000;
+    border: 1px solid;
 }
 .input-form{
     padding: 2px;
     font-size: 1.2rem;
     outline: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #cccc;
     margin: 10px;
-    width: 300px;
+    width: 100%;
 }
 .btn-submit{
     background-color: #1d1c3b;
@@ -16,6 +18,7 @@
     border-radius: 5px;
     margin-top: 30px;
     cursor: pointer;
+    width: 100%;
 }
 .input-date{
     outline: none;
@@ -23,6 +26,7 @@
     width: 620px;
     padding: 10px;
     text-align: center;
+    width: 100%;
 }
 .expiration-title{
     margin-top: 30px;
@@ -35,4 +39,37 @@
     border-bottom: 1px solid;
     padding: 10px;
     cursor: pointer;
+}
+.modal-opened{
+    display: block;
+    background-color: #fff;
+    width: 600px;
+    position: absolute;
+    top: 18%;
+    left: 35%;
+    padding: 80px;
+    border-radius: 20px;
+
+}
+.modal-closed{
+    display: none;
+}
+.btn-close-modal{
+    position: relative;
+    cursor: pointer;
+}
+.btn-new-item{
+    background-color: #1d1c3b;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    cursor:pointer;
+}
+.btn-new-item:hover{
+    background-color: #2c2b59;
+    transition: 0.3s;
+}
+.main{
+    display: flex;
+    justify-content: center;
 }

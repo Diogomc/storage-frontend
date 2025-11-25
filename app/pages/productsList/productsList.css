@@ -3,6 +3,7 @@ p{
 }
 .list{
     background-color: #456882;
+    width: 400px;
 }
 .delete-button:hover{
     cursor: pointer;
