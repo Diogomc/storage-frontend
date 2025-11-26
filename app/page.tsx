@@ -2,14 +2,14 @@
 import { Nav } from "./components/nav/nav";
 import { Hero } from "./pages/hero/hero";
 import { ProductForm } from "./pages/productForm/productForm";
-import { ProductsList } from "./pages/productsList/productsList";
+import { ExpiredProduct} from "./pages/expiredProducts/expiredProduct";
 
 export default function Home() {
   return (
     <div>
       <Nav/>
       <Hero/>
-      <ProductsList/>
+      <ExpiredProduct/>
       <ProductForm/>
     </div>
   );

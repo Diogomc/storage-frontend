@@ -1,32 +1,25 @@
 import { ProductServices } from "@/app/services/ProductServices";
 import { Product } from "@/app/types/Product";
 import { useEffect, useState } from "react"
-import "@/app/pages/productsList/productsList.css"
+import "@/app/pages/expiredProducts/expiredProduct.css"
 import { FaTrash } from "react-icons/fa";
 import { FaPen } from "react-icons/fa6";
-export const ProductsList = () => {
+export const ExpiredProduct = () => {
 
     const [products, setProducts] = useState<Product[]>()
-    const expiration = (dateStr: string) => {
-        const date = new Date(dateStr);
-        const today = new Date()
-
-        if (date < today) {
-            return <span className="text-red-600">Produto vencido</span>
-        }
-    }
+   
     
     const handleDelete = async (id:number) => {
         ProductServices.delete(id);
     }
 
     useEffect(() => {
-        const loadProducts = async () => {
-            const data = await ProductServices.getAll()
+        const getExpiredProducts = async () => {
+            const data = await ProductServices.expired()
             setProducts(data)
         }
 
-        loadProducts()
+        getExpiredProducts()
     }, [])
 
     return (
@@ -39,7 +32,7 @@ export const ProductsList = () => {
                         <p>Lote: {p.batch}</p>
                         <p>Marca: {p.productBrand}</p>
                         <p>Nome do Fornecedor: {p.supplierName}</p>
-                        <p>{expiration(p.expirationDate)}</p>
+                        <p className="text-red-500">Atenção, producto vencido!!</p>
                         <div className="config-buttons">
                             <button className="delete-button"><FaTrash onClick={() => handleDelete(p.productId)}/></button>
                             <button><FaPen/></button>

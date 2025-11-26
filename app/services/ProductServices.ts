@@ -10,6 +10,10 @@ getById: async(id:number): Promise<Product> => {
     const {data} = await api.get<Product>(`/Product/${id}`)
     return data;
 },
+expired: async () : Promise<Product[]> => {
+    const {data} = await api.get<Product[]>("/Product/expired")
+    return data;
+},
 create: async(product:Product): Promise<Product> => {
     const {data} = await api.post<Product>("/Product", product)
     return data;
