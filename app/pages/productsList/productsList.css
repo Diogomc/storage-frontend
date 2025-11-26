@@ -1,0 +1,19 @@
+.titles{
+    background-color: #1d1c3b;
+    color: #fff;
+}
+.titles th{
+    padding: 20px;
+}
+table{
+    width: 100%;
+}
+table, th, td{
+    border: 1px solid black;
+}
+.products-table{
+    background-color: #edececcc;
+}
+.products-table th{
+    padding: 10px;
+}
