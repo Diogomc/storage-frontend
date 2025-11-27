@@ -4,22 +4,24 @@ import { useEffect, useState } from "react"
 import "@/app/pages/expiredProducts/expiredProduct.css"
 import { FaTrash } from "react-icons/fa";
 import { FaPen } from "react-icons/fa6";
+import { ProductForm } from "../productForm/productForm";
 export const ExpiredProduct = () => {
 
     const [products, setProducts] = useState<Product[]>()
+    const [reaload, setReload] = useState(0);
    
-    
+    const getExpiredProducts = async () => {
+        const data = await ProductServices.expired()
+        setProducts(data)
+    }
     const handleDelete = async (id:number) => {
-        ProductServices.delete(id);
+        await ProductServices.delete(id);
+        getExpiredProducts()
     }
 
-    useEffect(() => {
-        const getExpiredProducts = async () => {
-            const data = await ProductServices.expired()
-            setProducts(data)
-        }
 
-        getExpiredProducts()
+    useEffect(() => {    
+        getExpiredProducts();
     }, [])
 
     return (
