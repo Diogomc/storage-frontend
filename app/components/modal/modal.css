@@ -3,19 +3,21 @@
     border: 1px solid #ccc;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     position: fixed;
-    top: 25%;
+    top: 15%;
     left: 35%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     padding: 100px;
     border-radius: 10px;
+    max-height: 100%;
     
 }
 
 .modal-header {
     display: flex;
     justify-content: space-between;
+    margin: 0px 0 30px 0;
 }
 
 .modal-title {
@@ -26,5 +28,4 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 160px;
 }

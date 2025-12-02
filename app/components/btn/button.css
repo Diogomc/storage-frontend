@@ -6,3 +6,7 @@
     border-radius: 8px;
     cursor: pointer;
 }
+.btn:hover{
+    background-color: #343259;
+    transition: 0.4s;
+}

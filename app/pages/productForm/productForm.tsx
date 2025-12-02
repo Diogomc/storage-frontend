@@ -5,6 +5,7 @@ import { Category } from "@/app/types/Category";
 import { useEffect, useState } from "react"
 import "@/app/pages/productForm/productForm.css"
 import { IoClose } from "react-icons/io5";
+import { Modal } from "@/app/components/modal/modal";
 interface Props {
     onSave?: () => void
 }
@@ -16,15 +17,8 @@ export const ProductForm = ({ onSave }: Props) => {
     const [supplier, setSupplier] = useState("");
     const [categoryId, setCategoryId] = useState("");
     const [categories, setCategories] = useState<Category[]>([]);
-    const [modalOpened, setModalOpened] = useState(false)
 
-
-    const modal = () => {
-        setModalOpened(true)
-    }
-    const handleCloseModal = () => {
-        setModalOpened(false)
-    }
+    const [modalOpened, setModalOpened] = useState<boolean>(false);
 
     useEffect(() => {
         const loadCategories = async () => {
@@ -58,13 +52,10 @@ export const ProductForm = ({ onSave }: Props) => {
     }
     return (
         <div className="main">
-            <button className="btn-new-item" onClick={modal}>Adicionar novo produto</button>
-            <div className={`flex flex-col justify-center items-center form-container ${modalOpened ? 'modal-opened' : 'modal-closed'}`}>
-                <div className="flex justify-between pb-7 items-center">
-                    <p className="text-2xl">Adicionar produto</p>
-                    <button className="btn-close-modal" onClick={handleCloseModal}><IoClose size={30} /></button>
-                </div>
-                <form onSubmit={handleSubmit} >
+            <Button onClick={() => setModalOpened(true)} name="Adicionar Produto"/>
+            <Modal title="Categoria" isOpen={modalOpened} onClose={() => setModalOpened(false)}>
+                <div>
+                <form className="form-product" onSubmit={handleSubmit} >
                     <div>
                         <input
                             className="input-form"
@@ -113,9 +104,14 @@ export const ProductForm = ({ onSave }: Props) => {
                             ))}
                         </select>
                     </div>
-                    <button className="btn-submit" type="submit">Adicionar Produto</button>
+                    <Button name="Adicionar" type="submit"/>
                 </form>
+                </div>
+            </Modal>
+               
+
+
+                
             </div>
-        </div>
     )
 }
