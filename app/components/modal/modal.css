@@ -1,0 +1,30 @@
+.modal-container {
+    width: 600px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    border-radius: 10px;
+    
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+}
+
+.form-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 160px;
+}

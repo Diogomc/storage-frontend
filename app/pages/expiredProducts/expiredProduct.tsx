@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import "@/app/pages/expiredProducts/expiredProduct.css"
 import { FaTrash } from "react-icons/fa";
 import { FaPen } from "react-icons/fa6";
-import { ProductForm } from "../productForm/productForm";
 export const ExpiredProduct = () => {
 
     const [products, setProducts] = useState<Product[]>()
