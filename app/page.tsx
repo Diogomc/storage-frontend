@@ -5,12 +5,13 @@ import { ExpiredProduct } from "./pages/expiredProducts/expiredProduct";
 import { ProductsList } from "./pages/productsList/productsList";
 import { CategoryForm } from "./pages/categoryForm/categoryForm";
 import { CategoriesList } from "./pages/categoriesList/categoriesList";
+import { Informations } from "./pages/informations/informations";
 
 export default function Home() {
   return (
     <div>
       <Nav />
-      <Hero />
+      <Informations/>
       <ExpiredProduct />
       <ProductsList />
       <CategoriesList/>

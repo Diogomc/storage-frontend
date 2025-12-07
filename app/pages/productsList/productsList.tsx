@@ -29,6 +29,8 @@ export const ProductsList = () => {
                         <th>Validade</th>
                         <th>Fornecedor</th>
                         <th>Marca</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +42,8 @@ export const ProductsList = () => {
                             <th>{p.expirationDate}</th>
                             <th>{p.supplierName}</th>
                             <th>{p.productBrand}</th>
+                            <th>{p.price}</th>
+                            <th>{p.availableQuantity}</th>
                         </tr>
 
                     ))}
