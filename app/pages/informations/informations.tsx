@@ -59,7 +59,7 @@ export const Informations = () => {
 
     ]
     const chartOptions = {
-        title: "Quantidade de Produtos disponíveis",
+        title: "Quantidade de Marcas Diferentes",
         legend: { position: "none" },
         backgroundColor: "#fff",
         color: "#fff",

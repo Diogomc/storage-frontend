@@ -1,16 +1,28 @@
-p{
-    padding: 2px;
-}
-.list{
-    background-color: #456882;
+.expired-container{
     width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    color: black;
+    max-height: 100%;
+    text-align: center;
+    margin: 0 20px 0 0;
+}
+.expired-title{
+    font-weight: bold;
+    color:red;
+    font-size: 1.3rem;
+    padding: 20px 0px 20px 20px;
+}
+.expired-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f3f3;
+    padding: 25px;
+    font-size: 1.1rem;
 }
 .delete-button:hover{
+    color: rgb(202, 73, 73);
     cursor: pointer;
-    color: red;
-}
-.config-buttons{
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-}
+    transition: 0.2s;
+}   

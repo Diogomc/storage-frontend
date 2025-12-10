@@ -15,6 +15,8 @@ export const ProductForm = ({ onSave }: Props) => {
     const [date, setDate] = useState("");
     const [brand, setBrand] = useState("");
     const [supplier, setSupplier] = useState("");
+    const [price, setPrice] = useState(0)
+    const [quantity, setQuantitity] = useState(Number)
     const [categoryId, setCategoryId] = useState("");
     const [categories, setCategories] = useState<Category[]>([]);
 
@@ -40,6 +42,8 @@ export const ProductForm = ({ onSave }: Props) => {
             productBrand: brand,
             supplierName: supplier,
             categoryId: Number(categoryId),
+            availableQuantity: quantity,
+            price: price
         });
 
         setName("")
@@ -48,70 +52,90 @@ export const ProductForm = ({ onSave }: Props) => {
         setBrand("")
         setDate("")
         setCategoryId("")
+        setQuantitity(0)
+        setPrice(0)
         onSave?.();
     }
     return (
         <div className="main">
-            <Button onClick={() => setModalOpened(true)} name="Adicionar Produto"/>
-            <Modal title="Categoria" isOpen={modalOpened} onClose={() => setModalOpened(false)}>
+            <Button onClick={() => setModalOpened(true)} name="Adicionar Produto" />
+            <Modal title="Adicionar Produto" isOpen={modalOpened} onClose={() => setModalOpened(false)}>
                 <div>
-                <form className="form-product" onSubmit={handleSubmit} >
-                    <div>
-                        <input
-                            className="input-form"
-                            type="text"
-                            placeholder="Nome"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <input type="text"
-                            className="input-form"
-                            placeholder="Fornecedor"
-                            value={supplier}
-                            onChange={(e) => setSupplier(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                            className="input-form"
-                            placeholder="Lote"
-                            value={batch}
-                            onChange={(e) => setBatch(e.target.value)}
-                        />
-                        <input type="text"
-                            className="input-form"
-                            placeholder="Marca"
-                            value={brand}
-                            onChange={(e) => setBrand(e.target.value)}
-                        />
-                    </div>
-                    <div className="flex items-center text-center flex-col">
-                        <p className="expiration-title">Data de Validade: </p>
-                        <input className="input-date"
-                            type="date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
-                        />
-                    </div>
-                    <div className="flex items-center">
+                    <form className="form-product" onSubmit={handleSubmit} >
+                        <div>
+                            <input
+                                className="input-form"
+                                type="text"
+                                placeholder="Nome"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <input type="text"
+                                className="input-form"
+                                placeholder="Fornecedor"
+                                value={supplier}
+                                onChange={(e) => setSupplier(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <input type="text"
+                                className="input-form"
+                                placeholder="Lote"
+                                value={batch}
+                                onChange={(e) => setBatch(e.target.value)}
+                            />
+                            <input type="text"
+                                className="input-form"
+                                placeholder="Marca"
+                                value={brand}
+                                onChange={(e) => setBrand(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <p>Quantidade</p>
+                            <input type="number"
+                                className="input-form"
+                                placeholder="Quantidade"
+                                value={quantity}
+                                onChange={(e) => setQuantitity(e.target.valueAsNumber)}
+                            />
+                            <p>Preço</p>
+                            <input type="number"
+                                className="input-form"
+                                placeholder="Preço"
+                                inputMode="decimal"
+                                value={price}
+                                step="any"
+                                onChange={(e) => setPrice(e.target.valueAsNumber)}
+                            />
+                        </div>
+                        <div className="flex items-center text-center flex-col">
+                            <p className="expiration-title">Data de Validade: </p>
+                            <input className="input-date"
+                                type="date"
+                                value={date}
+                                onChange={(e) => setDate(e.target.value)}
+                            />
+                        </div>
+                        <div className="flex items-center">
 
-                        <select className="category-select" value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
-                            <option value="">Selecione uma Categoria:</option>
-                            {categories.map(c => (
-                                <option value={c.categoryId} key={c.categoryId}>
-                                    {c.categoryName}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <Button name="Adicionar" type="submit"/>
-                </form>
+                            <select className="category-select" value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
+                                <option value="">Selecione uma Categoria:</option>
+                                {categories.map(c => (
+                                    <option value={c.categoryId} key={c.categoryId}>
+                                        {c.categoryName}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <Button name="Adicionar" type="submit" />
+                    </form>
                 </div>
             </Modal>
-               
 
 
-                
-            </div>
+
+
+        </div>
     )
 }

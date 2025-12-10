@@ -6,7 +6,7 @@ type Props = {
     isOpen: boolean;
     onClose: () => void;
     children: ReactNode;
-    title: string
+    title?: string
 }
 
 export const Modal = ({ isOpen, onClose, children, title }: Props) => {
@@ -14,7 +14,7 @@ export const Modal = ({ isOpen, onClose, children, title }: Props) => {
     return (
         <div className="modal-container">
             <div className="modal-header">
-                <h1 className="modal-title">Adicionar {title}</h1>
+                <h1 className="modal-title">{title}</h1>
                 <button onClick={onClose} className="cursor-pointer"><IoClose size={30} /></button>
             </div>
             <div className="form-area">

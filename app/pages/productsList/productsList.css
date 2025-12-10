@@ -1,19 +1,33 @@
-.titles{
-    background-color: #1d1c3b;
-    color: #fff;
+.main-productsList{
+    display: flex;
+    justify-content: center;
 }
-.titles th{
-    padding: 20px;
+.table-products-list{
+    width: 1300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
-table{
-    width: 100%;
+.titles-product{
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
 }
-table, th, td{
-    border: 1px solid black;
+.products-name{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 5px;
 }
-.products-table{
-    background-color: #edececcc;
+.product-id{
+    color: #929292;
+    font-weight: 100;
 }
-.products-table th{
+.icon-categories{
+    margin: 5px 10px 5px 10px;
+}
+.products-th, .tr-products{
+    padding: 15px;
+}
+.modal-product-infos{
+    font-size: 1.2rem;
     padding: 10px;
 }
