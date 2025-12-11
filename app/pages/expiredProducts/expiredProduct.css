@@ -1,28 +1,36 @@
-.expired-container{
-    width: 400px;
+.title-expire{
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    padding: 20px;
+}
+.expiring-container{
+    display: flex;
+    margin-bottom: 200px;
+}
+
+.expired-container, .close-expiration-container{
+    width: 50%;
+}
+.expireds, .close-expire{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    color: black;
-    max-height: 100%;
-    text-align: center;
-    margin: 0 20px 0 0;
-}
-.expired-title{
-    font-weight: bold;
-    color:red;
-    font-size: 1.3rem;
-    padding: 20px 0px 20px 20px;
-}
-.expired-product{
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f4f3f3;
-    padding: 25px;
-    font-size: 1.1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px;
 }
-.delete-button:hover{
-    color: rgb(202, 73, 73);
-    cursor: pointer;
+.expired-products, .close-expiration{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+}
+.btn-delete-expire:hover{
+    color: rgb(219, 98, 98);
     transition: 0.2s;
-}   
+    cursor: pointer;
+}

@@ -72,9 +72,7 @@ export const ProductsList = () => {
         <div>
             <p className="text-4xl text-black text-center p-12">Estoque</p>
             <div className="main-productsList">
-                <h1>
-                    <ExpiredProduct />
-                </h1>
+                
 
                 <div className="products-list-container">
                     <table className="table-products-list">

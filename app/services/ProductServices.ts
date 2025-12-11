@@ -18,6 +18,10 @@ export const ProductServices = {
         const {data} = await api.get<number>("Product/TotalValue")
         return data;
     },
+    closeToExpiration: async(): Promise<Product[]> => {
+        const {data} = await api.get<Product[]>("Product/CloseToExpiration")
+        return data;
+    },
     expired: async (): Promise<Product[]> => {
         const { data } = await api.get<Product[]>("/Product/expired")
         return data;

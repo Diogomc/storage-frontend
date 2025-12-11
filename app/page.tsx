@@ -11,6 +11,7 @@ export default function Home() {
     <div>
       <Nav />
       <Informations />
+      <ExpiredProduct/>
       <ProductsList />
       <CategoriesList />
       <CategoryForm />

@@ -55,16 +55,15 @@ export const Informations = () => {
         ...categories.map((c) => [
             c.categoryName,
             products.filter((p) => p.categoryId === c.categoryId).length
-        ])
-
+        ]),
     ]
     const chartOptions = {
-        title: "Quantidade de Marcas Diferentes",
+        title: "Quantidade de Produtos",
         legend: { position: "none" },
         backgroundColor: "#fff",
         color: "#fff",
     };
-
+    
     return (
         <div className="information-container">
             <div className="flex justify-center pt-6">
@@ -105,7 +104,7 @@ export const Informations = () => {
                     <Chart
                         chartType="BarChart"
                         width="1330px"
-                        height="300px"
+                        height="400px"
                         data={chartData}
                         options={chartOptions}
                     />
@@ -114,7 +113,7 @@ export const Informations = () => {
                     <Chart
                         chartType="PieChart"
                         width="400px"
-                        height="300px"
+                        height="400px"
                         data={chartData}
                         options={chartOptions}
 
