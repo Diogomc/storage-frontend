@@ -1,7 +1,6 @@
 import { ProductServices } from "@/app/services/ProductServices";
 import { Product } from "@/app/types/Product";
 import { useEffect, useState } from "react";
-import "@/app/pages/productsList/productsList.css";
 import { ProductForm } from "../productForm/productForm";
 import { GiSodaCan } from "react-icons/gi";
 import { RiBeerFill } from "react-icons/ri";
@@ -9,8 +8,8 @@ import { BiBowlRice } from "react-icons/bi";
 import { BiSolidCoffeeBean } from "react-icons/bi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Button } from "@/app/components/btn/button";
-import { ExpiredProduct } from "../expiredProducts/expiredProduct";
 import { Modal } from "@/app/components/modal/modal";
+import { FaEye } from "react-icons/fa";
 
 export const ProductsList = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -31,31 +30,31 @@ export const ProductsList = () => {
             case 1:
                 return (
                     <p className="icon-categories bg-green-200">
-                        <GiSodaCan size={40} />
+                        <GiSodaCan size={40} color="black"/>
                     </p>
                 );
             case 2:
                 return (
                     <p className="icon-categories bg-amber-200">
-                        <RiBeerFill size={40} />
+                        <RiBeerFill size={40} color="black"/>
                     </p>
                 );
             case 3:
                 return (
                     <p className="icon-categories bg-amber-50">
-                        <BiBowlRice size={40} />
+                        <BiBowlRice size={40} color="black"/>
                     </p>
                 );
             case 4:
                 return (
                     <p className="icon-categories bg-orange-800">
-                        <BiSolidCoffeeBean size={40} />
+                        <BiSolidCoffeeBean size={40}/>
                     </p>
                 );
             default:
                 return (
                     <p className="icon-categories">
-                        <AiOutlineLoading3Quarters />
+                        <AiOutlineLoading3Quarters size={40}/>
                     </p>
                 );
         }
@@ -64,50 +63,45 @@ export const ProductsList = () => {
     const openModal = (product: Product) => {
         setSelectedProduct(product)
         setModalOpened(true)
-        console.log(product)
     }
 
 
     return (
-        <div>
-            <p className="text-4xl text-black text-center p-12">Estoque</p>
-            <div className="main-productsList">
-                
-
-                <div className="products-list-container">
-                    <table className="table-products-list">
+        <div className="m-20 max-md:m-0">
+            <p className="text-4xl text-center p-10 m-10">Produtos em Estoque</p>
+                <div className="">
+                    <table className="table-auto w-full bg-second text-center rounded-md ">
                         <thead>
-                            <tr className="titles-product">
-                                <th className="products-th">Produto</th>
-                                <th className="products-th">Validade</th>
-                                <th className="products-th">Preço</th>
-                                <th className="products-th">Quantidade</th>
-                                <th className="products-th">
+                            <tr>
+                                <th>Produto</th>
+                                <th>Validade</th>
+                                <th className="max-md:hidden">Preço</th>
+                                <th className="max-md:hidden">Quantidade</th>
+                                <th className="max-md:hidden ">
                                     <ProductForm onSave={loadProducts} />
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             {products.map((p) => (
-                                <tr className="tr-products" key={p.productId}>
-                                    <th className="products-name">
+                                <tr key={p.productId} >
+                                    <td className="flex items-center gap-3 text-left px-8">
                                         <div>{setImageId(p)}</div>
-                                        <div>
-                                            <p>{p.productName}</p>
-                                            <p className="product-id">#{p.productId}</p>
+                                        <div >
+                                            <p className="text-lg">{p.productName}</p>
+                                            <p className="font-bold">#{p.productId}</p>
                                         </div>
-                                    </th>
-                                    <th className="products-th">{p.expirationDate}</th>
-                                    <th className="products-th">{p.price}</th>
-                                    <th className="products-th">{p.availableQuantity}</th>
-                                    <th className="products-th">
-                                        <Button name="Ver mais" onClick={() => openModal(p)} />
-                                    </th>
+                                    </td>
+                                    <td className="px-10 py-4">{p.expirationDate}</td>
+                                    <td className="px-10 max-md:hidden">R${p.price}</td>
+                                    <td className="px-10 max-md:hidden">{p.availableQuantity}</td>
+                                    <td className="px-10">
+                                        <FaEye size={25} onClick={() => openModal(p)} className="cursor-pointer hover:text-blue-200 hover:transisiton duration-300"/>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                </div>
             </div>
 
             <Modal title={selectedProduct?.productName} isOpen={modalOpened} onClose={() => setModalOpened(false)}>
@@ -118,6 +112,8 @@ export const ProductsList = () => {
                     <p className="modal-product-infos">Lote: {selectedProduct?.batch}</p>
                     <p className="modal-product-infos">Marca: {selectedProduct?.productBrand}</p>
                     <p className="modal-product-infos">Fornecedor: {selectedProduct?.supplierName}</p>
+                    <p className="modal-product-infos">Perecível?: {selectedProduct?.isPerishable}</p>
+                    
                 </div>
             </Modal>
         </div>

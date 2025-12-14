@@ -8,4 +8,5 @@ export type Product = {
     price:number
     availableQuantity:number
     categoryId: number
+    isPerishable:boolean
 }

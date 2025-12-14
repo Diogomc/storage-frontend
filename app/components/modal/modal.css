@@ -3,15 +3,16 @@
     border: 1px solid #ccc;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     position: fixed;
-    top: 8%;
-    left: 37%;
+    top: 2%;
+    left: 35%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 100px;
     border-radius: 10px;
+    padding: 80px;
     max-height: 100%;
     color: #000;
+    z-index: 999;
 }
 
 .modal-header {

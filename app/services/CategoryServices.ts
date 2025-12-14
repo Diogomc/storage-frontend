@@ -8,5 +8,8 @@ export const CategoryServices = {
     create: async (category:Category): Promise<Category> => {
         const { data } = await api.post<Category>("/Category", category)
         return data;
+    },
+    delete: async (id:number): Promise<void> => {
+        await api.delete<Category>(`/Category/${id}`)
     }
 }

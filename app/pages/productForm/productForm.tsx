@@ -4,6 +4,7 @@ import { ProductServices } from "@/app/services/ProductServices";
 import { Category } from "@/app/types/Category";
 import { useEffect, useState } from "react"
 import "@/app/pages/productForm/productForm.css"
+import { IoMdAdd } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { Modal } from "@/app/components/modal/modal";
 interface Props {
@@ -16,7 +17,8 @@ export const ProductForm = ({ onSave }: Props) => {
     const [brand, setBrand] = useState("");
     const [supplier, setSupplier] = useState("");
     const [price, setPrice] = useState(0)
-    const [quantity, setQuantitity] = useState(Number)
+    const [quantity, setQuantitity] = useState(0)
+    const [isPerishable, setIsPerishable] = useState<boolean>(false)
     const [categoryId, setCategoryId] = useState("");
     const [categories, setCategories] = useState<Category[]>([]);
 
@@ -43,7 +45,8 @@ export const ProductForm = ({ onSave }: Props) => {
             supplierName: supplier,
             categoryId: Number(categoryId),
             availableQuantity: quantity,
-            price: price
+            price: price,
+            isPerishable
         });
 
         setName("")
@@ -58,11 +61,12 @@ export const ProductForm = ({ onSave }: Props) => {
     }
     return (
         <div className="main">
-            <Button onClick={() => setModalOpened(true)} name="Adicionar Produto" />
+            <Button icon={IoMdAdd} onClick={() => setModalOpened(true)} name="Adicionar Produto" />
             <Modal title="Adicionar Produto" isOpen={modalOpened} onClose={() => setModalOpened(false)}>
                 <div>
-                    <form className="form-product" onSubmit={handleSubmit} >
+                    <form className="form-product text-left" onSubmit={handleSubmit} >
                         <div>
+                            <p>Nome:</p>
                             <input
                                 className="input-form"
                                 type="text"
@@ -70,6 +74,7 @@ export const ProductForm = ({ onSave }: Props) => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
+                            <p>Fornecedor:</p>
                             <input type="text"
                                 className="input-form"
                                 placeholder="Fornecedor"
@@ -78,12 +83,14 @@ export const ProductForm = ({ onSave }: Props) => {
                             />
                         </div>
                         <div>
+                            <p>Lote:</p>
                             <input type="text"
                                 className="input-form"
                                 placeholder="Lote"
                                 value={batch}
                                 onChange={(e) => setBatch(e.target.value)}
                             />
+                            <p>Marca: </p>
                             <input type="text"
                                 className="input-form"
                                 placeholder="Marca"
@@ -116,6 +123,16 @@ export const ProductForm = ({ onSave }: Props) => {
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
                             />
+                        </div>
+                        <div>
+                            <div className="flex items-center text-center flex-col">
+                                <p className="expiration-title">Perecível? </p>
+                                <input className="input-date"
+                                    type="checkbox"
+                                    value={date}
+                                    onChange={(e) => setIsPerishable(e.target.checked)}
+                                />
+                            </div>
                         </div>
                         <div className="flex items-center">
 

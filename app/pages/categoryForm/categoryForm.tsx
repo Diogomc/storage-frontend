@@ -35,7 +35,7 @@ export const CategoryForm = ({ onSave }: Props) => {
 
     return (
         <div className="flex justify-center">
-            <Button name="Adicionar Categoria" onClick={() => setModalOpened(true)}/>
+            <Button icon={IoAdd} name="Adicionar Categoria" onClick={() => setModalOpened(true)}/>
             <Modal title="Categoria" isOpen={modalOpened} onClose={() => setModalOpened(false)} >
                 <div>
                     <form onSubmit={handleSubmit}>
