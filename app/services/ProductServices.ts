@@ -10,8 +10,8 @@ export const ProductServices = {
         const { data } = await api.get<Product>(`/Product/${id}`)
         return data;
     },
-    getAllProducts: async(): Promise<number> => {
-        const {data} = await api.get<number>("Product/AllProducts")
+    getTotalQuantity: async(): Promise<number> => {
+        const {data} = await api.get<number>("Product/TotalQuantity")
         return data;
     },
     getTotalValue: async(): Promise<number> => {
@@ -19,15 +19,15 @@ export const ProductServices = {
         return data;
     },
     getCloseExpirationPerishables: async (): Promise<Product[]> =>{
-        const {data} = await api.get<Product[]>("Product/CloseToExpirationPerishable")
+        const {data} = await api.get<Product[]>("Product/CloseExpirationPerishables")
         return data;
     },
-    closeToExpiration: async(): Promise<Product[]> => {
-        const {data} = await api.get<Product[]>("Product/CloseToExpiration")
+    getCloseToExpiration: async(): Promise<Product[]> => {
+        const {data} = await api.get<Product[]>("Product/CloseExpiration")
         return data;
     },
-    expired: async (): Promise<Product[]> => {
-        const { data } = await api.get<Product[]>("/Product/expired")
+    getExpiredProducts: async (): Promise<Product[]> => {
+        const { data } = await api.get<Product[]>("/Product/Expireds")
         return data;
     },
     create: async (product: Product): Promise<Product> => {

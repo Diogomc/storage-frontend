@@ -32,7 +32,7 @@ export const Informations = () => {
         }
     }
     const loadAllProducts = async () => {
-        const data = await ProductServices.getAllProducts();
+        const data = await ProductServices.getTotalQuantity();
         setAllProducts(data);
     }
     const loadCategories = async () => {

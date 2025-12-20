@@ -9,7 +9,7 @@ export const ExpiredProduct = () => {
     const [closeToExpiration, setCloseToExpiration] = useState<Product[]>([])
     const [closeToExpirationPerishable, setCloseToExpirationPerishable] = useState<Product[]>([])
     const getExpiredProducts = async () => {
-        const data = await ProductServices.expired()
+        const data = await ProductServices.getExpiredProducts()
         setExpiredProducts(data)
     }
     const getCloseExpirePerishable = async () => {
@@ -17,7 +17,7 @@ export const ExpiredProduct = () => {
         setCloseToExpirationPerishable(data)
     }
     const getCloseToExpiration = async () => {
-        const data = await ProductServices.closeToExpiration()
+        const data = await ProductServices.getCloseToExpiration()
         setCloseToExpiration(data);
     }
     const handleDelete = async (id: number) => {
