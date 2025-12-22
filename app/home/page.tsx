@@ -8,7 +8,11 @@ import { AiFillAlert } from "react-icons/ai";
 import { BsFillClipboard2DataFill } from "react-icons/bs";
 import { FaBoxOpen } from "react-icons/fa";
 import Typewriter from "react-ts-typewriter";
-
+import { FaPeopleGroup } from "react-icons/fa6";
+import { RiLuggageDepositFill } from "react-icons/ri";
+import { CiCalendarDate } from "react-icons/ci";
+import { FaTruckMoving } from "react-icons/fa";
+import { MdDashboard } from "react-icons/md";
 import { motion } from 'framer-motion';
 
 const responsive = {
@@ -58,18 +62,20 @@ export default function Home() {
       </Carousel>
       <h2 className="text-center p-20 text-4xl max-md:text-2xl">
         <Typewriter
-        text={"Nossas Soluções..."}
-        loop
-        speed={200}
-        delay={0}
-      />
+          text={"Nossas Soluções..."}
+          loop
+          speed={200}
+          delay={0}
+        />
       </h2>
-      <motion.div 
-      initial={{opacity:0, x: -100}}
-      whileInView={{opacity:1, x:0}}
-      transition={{duration: 0.5}}
-      exit={{opacity: 0, x: -100}}
-      className="flex w-full gap-4 justify-center max-md:flex-col max-md:gap-2">
+
+
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, x: -100 }}
+        className="flex w-full gap-4 justify-center max-md:flex-col max-md:gap-2">
         <div className="flex flex-col items-center w-100 bg-second rounded-md text-center max-md:w-full">
           <p className="p-5 text-amber-600"><FaBoxOpen size={50} /></p>
           <p className="text-2xl p-2 text-blue-400">Controle de Estoque</p>
@@ -86,8 +92,57 @@ export default function Home() {
           <p className="text-lg p-8 pt-2">Receba alertas sobre as situações dos seus produtos</p>
         </div>
       </motion.div>
+
+
+      <div className="text-center flex flex-col items-center mt-30 gap-3">
+        <p className="text-4xl font-bold">Comece hoje a otimizar tarefas repetitivas.</p>
+        <p className="text-gray-400 text-lg">Conecte todos os seus processos, desde a entrada até a saída de seus produtos</p>
+      </div>
+      <div className="p-6 text-center text-lg">
+        <Button name="Fale com um consultor" />
+      </div>
+
+
+      <div className="flex justify-center mt-30">
+        <div className="flex flex-col gap-3 items-baseline-last">
+          <p className="text-4xl w-lg">Suas operações conectadas em todos os processos</p>
+          <p className="text-lg text-gray-400 w-sm">Com o StockLab, cada etapa da sua operação conecta-se automaticamente com a operação seguinte</p>
+          <Button name="Fale com um consultor" />
+        </div>
+
+
+
+
+        <div className="grid grid-cols-3 gap-2 items-center text-center">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+            <FaPeopleGroup size={60} color="#5A7ACD" />
+            <p className="text-lg font-bold">Pessoas</p>
+          </div>
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+            <RiLuggageDepositFill size={60} color="#FFD41D" />
+            <p className="text-lg font-bold">Estoque</p>
+          </div>
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+            <FaBoxOpen size={60} color="#E2852E" />
+            <p className="text-lg font-bold">Mercadorias</p>
+          </div>
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+            <CiCalendarDate size={60} />
+            <p className="text-lg font-bold">Validade</p>
+          </div>
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+            <MdDashboard size={60} color="#89986D" />
+            <p className="text-lg font-bold">Dashboard </p>
+          </div>
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+            <FaTruckMoving size={60} color="#4A70A9" />
+            <p className="text-lg font-bold">Saídas</p>
+          </div>
+
+        </div>
+      </div>
+
+
     </div>
-
-
   );
 }
