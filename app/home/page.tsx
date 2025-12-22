@@ -14,6 +14,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { FaTruckMoving } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { motion } from 'framer-motion';
+import { Footer } from "../components/footer";
 
 const responsive = {
   desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1 },
@@ -142,7 +143,7 @@ export default function Home() {
         </div>
       </div>
 
-
+    <Footer/>
     </div>
   );
 }
