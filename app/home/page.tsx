@@ -23,7 +23,7 @@ const responsive = {
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-fbackground">
       <nav>
         <Nav />
       </nav>
@@ -75,7 +75,7 @@ export default function Home() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0, x: -100 }}
-        className="flex w-full gap-4 justify-center max-md:flex-col max-md:gap-2">
+        className="flex w-full gap-4 justify-center max-md:flex-col max-md:gap-2 max-md:p-2">
         <div className="flex flex-col items-center w-100 bg-second rounded-md text-center max-md:w-full">
           <p className="p-5 text-amber-600"><FaBoxOpen size={50} /></p>
           <p className="text-2xl p-2 text-blue-400">Controle de Estoque</p>
@@ -94,26 +94,26 @@ export default function Home() {
       </motion.div>
 
 
-      <div className="text-center flex flex-col items-center mt-30 gap-3">
-        <p className="text-4xl font-bold">Comece hoje a otimizar tarefas repetitivas.</p>
-        <p className="text-gray-400 text-lg">Conecte todos os seus processos, desde a entrada até a saída de seus produtos</p>
+      <div className="text-center flex flex-col items-center mt-30 gap-3 max-md:w-full">
+        <p className="text-4xl font-bold max-md:text-3xl">Comece hoje a otimizar tarefas repetitivas.</p>
+        <p className="text-gray-400 text-lg max-md:w-full">Conecte todos os seus processos, desde a entrada até a saída de seus produtos</p>
       </div>
       <div className="p-6 text-center text-lg">
         <Button name="Fale com um consultor" />
       </div>
 
 
-      <div className="flex justify-center mt-30">
-        <div className="flex flex-col gap-3 items-baseline-last">
-          <p className="text-4xl w-lg">Suas operações conectadas em todos os processos</p>
-          <p className="text-lg text-gray-400 w-sm">Com o StockLab, cada etapa da sua operação conecta-se automaticamente com a operação seguinte</p>
+      <div className="flex justify-center mt-30 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20">
+        <div className="flex flex-col gap-3 items-baseline-last max-md:items-center">
+          <p className="text-4xl w-lg max-md:text-3xl max-md:w-full">Suas operações conectadas em todos os processos</p>
+          <p className="text-lg text-gray-400 w-sm ">Com o StockLab, cada etapa da sua operação conecta-se automaticamente com a operação seguinte</p>
           <Button name="Fale com um consultor" />
         </div>
 
 
 
 
-        <div className="grid grid-cols-3 gap-2 items-center text-center">
+        <div className="grid grid-cols-3 gap-2 items-center text-center max-md:grid-cols-2 ">
           <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
             <FaPeopleGroup size={60} color="#5A7ACD" />
             <p className="text-lg font-bold">Pessoas</p>
