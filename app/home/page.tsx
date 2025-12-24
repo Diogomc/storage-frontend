@@ -76,7 +76,7 @@ export default function Home() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0, x: -100 }}
-        className="flex w-full gap-4 justify-center max-md:flex-col max-md:gap-2 max-md:p-2 text-background">
+        className="flex w-full gap-10 justify-center max-md:flex-col max-md:gap-2 max-md:p-2 text-background">
         <div className="flex flex-col items-center w-100 bg-sky-700 rounded-md text-center max-md:w-full">
           <p className="p-5 "><FaBoxOpen size={40} /></p>
           <p className="text-3xl p-2 font-bold font-sans">Controle de Estoque</p>
@@ -95,7 +95,7 @@ export default function Home() {
       </motion.div>
 
 
-      <div className="text-center flex flex-col items-center mt-30 gap-3 max-md:w-full max-md:p-2">
+      <div className="text-center flex flex-col items-center mt-50 gap-3 max-md:w-full max-md:p-2">
         <p className="text-4xl font-bold max-md:text-3xl">Comece hoje a otimizar tarefas repetitivas.</p>
         <p className="text-gray-400 text-lg max-md:w-full">Conecte todos os seus processos, desde a entrada até a saída de seus produtos</p>
       </div>
@@ -107,7 +107,7 @@ export default function Home() {
       initial={{x: -100, opacity: 0}}
       whileInView={{x: 0, opacity: 1}}
       transition={{duration: 0.7}}
-      className="flex  justify-around w-full p-10 gap-10 mt-30 mb-30 items-center max-md:flex-col max-md:m-0 max-md:p-4">
+      className="flex  justify-around w-full p-10 mt-40 items-center max-md:flex-col max-md:m-0 max-md:p-4 max-md:gap-8">
         <div>
           <img src="/dashboard.jpg" alt="" className="rounded-md w-250 max-md:w-full"/>
         </div>
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <div className="flex justify-center mt-30 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20 max-md:p-2">
+      <div className="flex justify-center mt-50 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20 max-md:p-2">
         <div className="flex flex-col gap-3 items-baseline-last max-md:items-center">
           <p className="text-4xl w-lg max-md:text-3xl max-md:w-full">Suas operações conectadas em todos os processos</p>
           <p className="text-lg text-gray-400 w-sm ">Com o StockLab, cada etapa da sua operação conecta-se automaticamente com a operação seguinte</p>
