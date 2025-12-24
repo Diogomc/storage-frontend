@@ -19,7 +19,7 @@ import { Footer } from "../components/footer";
 const responsive = {
   desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1 },
   tablet: { breakpoint: { max: 1024, min: 464 }, items: 1 },
-  mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
+  mobile: { breakpoint: { max: 464, min: 0 }, items: 1},
 };
 
 export default function Home() {
@@ -34,6 +34,7 @@ export default function Home() {
         responsive={responsive}
         infinite
         autoPlaySpeed={3000}
+        arrows={false}
       >
         <div className="h-160 w-full max-md:h-150">
 
@@ -95,7 +96,7 @@ export default function Home() {
       </motion.div>
 
 
-      <div className="text-center flex flex-col items-center mt-30 gap-3 max-md:w-full">
+      <div className="text-center flex flex-col items-center mt-30 gap-3 max-md:w-full max-md:p-2">
         <p className="text-4xl font-bold max-md:text-3xl">Comece hoje a otimizar tarefas repetitivas.</p>
         <p className="text-gray-400 text-lg max-md:w-full">Conecte todos os seus processos, desde a entrada até a saída de seus produtos</p>
       </div>
@@ -104,7 +105,7 @@ export default function Home() {
       </div>
 
 
-      <div className="flex justify-center mt-30 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20">
+      <div className="flex justify-center mt-30 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20 max-md:p-2">
         <div className="flex flex-col gap-3 items-baseline-last max-md:items-center">
           <p className="text-4xl w-lg max-md:text-3xl max-md:w-full">Suas operações conectadas em todos os processos</p>
           <p className="text-lg text-gray-400 w-sm ">Com o StockLab, cada etapa da sua operação conecta-se automaticamente com a operação seguinte</p>
@@ -115,27 +116,27 @@ export default function Home() {
 
 
         <div className="grid grid-cols-3 gap-2 items-center text-center max-md:grid-cols-2 ">
-          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-700">
             <FaPeopleGroup size={60} color="#5A7ACD" />
             <p className="text-lg font-bold">Pessoas</p>
           </div>
-          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-700">
             <RiLuggageDepositFill size={60} color="#FFD41D" />
             <p className="text-lg font-bold">Estoque</p>
           </div>
-          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-700">
             <FaBoxOpen size={60} color="#E2852E" />
             <p className="text-lg font-bold">Mercadorias</p>
           </div>
-          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-700">
             <CiCalendarDate size={60} />
             <p className="text-lg font-bold">Validade</p>
           </div>
-          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-700">
             <MdDashboard size={60} color="#89986D" />
             <p className="text-lg font-bold">Dashboard </p>
           </div>
-          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40">
+          <div className="bg-second rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-700">
             <FaTruckMoving size={60} color="#4A70A9" />
             <p className="text-lg font-bold">Saídas</p>
           </div>
