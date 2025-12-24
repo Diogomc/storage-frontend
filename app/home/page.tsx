@@ -95,7 +95,7 @@ export default function Home() {
       </motion.div>
 
 
-      <div className="text-center flex flex-col items-center mt-50 gap-3 max-md:w-full max-md:p-2">
+      <div className="text-center flex flex-col items-center mt-50 gap-3 max-md:w-full max-md:p-2 max-md:mt-20">
         <p className="text-4xl font-bold max-md:text-3xl">Comece hoje a otimizar tarefas repetitivas.</p>
         <p className="text-gray-400 text-lg max-md:w-full">Conecte todos os seus processos, desde a entrada até a saída de seus produtos</p>
       </div>
@@ -112,14 +112,14 @@ export default function Home() {
           <img src="/dashboard.jpg" alt="" className="rounded-md w-250 max-md:w-full"/>
         </div>
         <div className="flex flex-col gap-5 max-md:w-full">
-          <p className="text-4xl font-sans">Dashboard</p>
+          <p className="text-4xl font-sans max-md:text-center">Dashboard</p>
           <p className="w-150 text-lg text-sub max-md:w-full">Nosso Dashboard de Gestão de Estoque coloca o controle na palma da sua mão: 
             visualize em tempo real níveis de produtos, entradas e saídas, e indicadores de validades. 
             Tudo em uma interface moderna, intuitiva e dinâmica, feita para simplificar sua rotina e maximizar resultados.</p>
         </div>
       </motion.div>
 
-      <div className="flex justify-center mt-50 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20 max-md:p-2">
+      <div className="flex justify-center mt-60 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-10 max-md:mt-20 max-md:p-2">
         <div className="flex flex-col gap-3 items-baseline-last max-md:items-center">
           <p className="text-4xl w-lg max-md:text-3xl max-md:w-full">Suas operações conectadas em todos os processos</p>
           <p className="text-lg text-gray-400 w-sm ">Com o StockLab, cada etapa da sua operação conecta-se automaticamente com a operação seguinte</p>
