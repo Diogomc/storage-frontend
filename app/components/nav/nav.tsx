@@ -13,7 +13,7 @@ export const Nav = () => {
     initial={{y: -50}}
     animate={{y: 0}}
     transition={{duration: 0.5}}
-    className="flex justify-around nav max-md:flex-col bg-second sticky z-999 w-full h-16">
+    className="flex justify-around nav max-md:flex-col bg-second sticky z-999 w-full h-16 text-background">
       
       <ul className="flex items-center justify-between flex-row-reverse">
         <li>
