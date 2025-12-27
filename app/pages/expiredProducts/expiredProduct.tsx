@@ -35,7 +35,7 @@ export const ExpiredProduct = () => {
         <div className="m-20 max-md:m-2">
             <p className="text-center text-3xl m-20">Atenção</p>
             <div className="flex justify-center gap-3 w-full max-md:flex-col">
-                <div className="bg-second rounded-md w-full flex flex-col justify-around items-center p-2">
+                <div className="shadow-xl/20 border-1 border-gray-100 rounded-md w-full flex flex-col justify-around items-center p-2">
                     <p className="text-2xl p-8">Produtos vencidos </p>
                     {expiredProducts?.map((p) => (
                         <div key={p.productId} className="flex justify-between text-center items-center w-full p-5">
@@ -46,7 +46,7 @@ export const ExpiredProduct = () => {
                     ))}
 
                 </div>
-                <div className="bg-second rounded-md w-full flex flex-col justify-around items-center p-2">
+                <div className="shadow-xl/20 border-1 border-gray-100 rounded-md w-full flex flex-col justify-around items-center p-2">
                     <p className="text-2xl p-8">Produtos Próximos ao vencimento</p>
                     {closeToExpiration.map((p) => (
                         <div key={p.productId} className="flex justify-between text-center items-center w-full p-5">
@@ -56,7 +56,7 @@ export const ExpiredProduct = () => {
                         </div>
                     ))}
                 </div>
-                <div className="bg-second rounded-md w-full flex flex-col justify-around items-center p-2">
+                <div className="shadow-xl/20 border-1 border-gray-100 rounded-md w-full flex flex-col justify-around items-center p-2">
                     <p className="text-2xl p-8">Perecíveis próximos ao vencimento</p>
                     {closeToExpirationPerishable.map((p) => (
                         <div key={p.productId} className="flex justify-between text-center items-center w-full p-5">

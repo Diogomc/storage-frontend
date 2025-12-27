@@ -126,27 +126,27 @@ export default function Home() {
           <Button name="Fale com um consultor" />
         </div>
         <div className="grid grid-cols-3 gap-2 items-center text-center max-md:grid-cols-2 ">
-          <div className="border border-gray-400 rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
+          <div className="border border-gray-400 rounded-md p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
             <FaPeopleGroup size={60} color="#5A7ACD" />
             <p className="text-lg font-bold">Pessoas</p>
           </div>
-          <div className="border border-gray-400 rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
+          <div className="border border-gray-400 rounded-md p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
             <RiLuggageDepositFill size={60} color="#FFD41D" />
             <p className="text-lg font-bold">Estoque</p>
           </div>
-          <div className="border border-gray-400 rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
+          <div className="border border-gray-400 rounded-md p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
             <FaBoxOpen size={60} color="#E2852E" />
             <p className="text-lg font-bold">Mercadorias</p>
           </div>
-          <div className="border border-gray-400 rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
+          <div className="border border-gray-400 rounded-md p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
             <CiCalendarDate size={60} />
             <p className="text-lg font-bold">Validade</p>
           </div>
-          <div className="border border-gray-400 rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
+          <div className="border border-gray-400 rounded-md p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
             <MdDashboard size={60} color="#89986D" />
             <p className="text-lg font-bold">Dashboard </p>
           </div>
-          <div className="border border-gray-400 rounded-2xl p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
+          <div className="border border-gray-400 rounded-md p-5 flex flex-col items-center h-40 justify-center w-40 hover:bg-gray-300">
             <FaTruckMoving size={60} color="#4A70A9" />
             <p className="text-lg font-bold">Saídas</p>
           </div>

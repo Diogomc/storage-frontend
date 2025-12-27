@@ -18,22 +18,18 @@ export const Informations = () => {
     const [allProducts, setAllProducts] = useState<number>();
     const [totalValue, setTotalValue] = useState<number>();
     const [categories, setCategories] = useState<Category[]>([])
-    const [loading, setLoading] = useState(true)
+    const [gross, setGross] = useState<number>();
+    const [profitMargin, setProfitMargin] = useState<number>();
 
-    
-    const loadProducts = async () => {
-        try {
-            const data = await ProductServices.getAll();
-            setProducts(data);
-        } catch (error) {
-            console.error("Erro ao carregar produtos", error)
-        } finally {
-            setLoading(false)
-        }
-    }
+
     const loadAllProducts = async () => {
         const data = await ProductServices.getTotalQuantity();
         setAllProducts(data);
+    }
+    const loadProducts = async () => {
+        const data = await ProductServices.getAll()
+        setProducts(data);
+
     }
     const loadCategories = async () => {
         const data = await CategoryServices.getAll();
@@ -43,12 +39,30 @@ export const Informations = () => {
         const data = await ProductServices.getTotalValue();
         setTotalValue(data);
     }
+    const loadGrossValue = async () => {
+        const data = await ProductServices.getTotalGrossValue();
+        setGross(data);
+    }
+    const loadProfitMargin = async () => {
+        const data = await ProductServices.getProfitMargin();
+        setProfitMargin(data);
+    }
 
-    
+    const brlFormat = (valor?: number) => {
+        if (valor === undefined) return "R$0,00"
+        return new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(valor);
+    }
+
+
     useEffect(() => {
-        loadProducts();
         loadCategories();
+        loadGrossValue();
+        loadProducts();
         loadAllProducts();
+        loadProfitMargin();
         loadTotalValue();
     }, [])
 
@@ -62,26 +76,26 @@ export const Informations = () => {
     const chartOptions = {
         title: "Quantidade de Produtos",
         titleTextStyle: {
-            color: '#fff',      
-            fontSize: 18,     
-            bold: true,        
-            },
-            hAxis: {
-                textStyle:{
-                    color:"#fff",
-                    bold:true
-                }
-            },
-            vAxis:{
-                textStyle:{
-                    color:"#fff",
-                    bold:true
-                }
-            },
-        legend: { textStyle: {color:"#fff"}},
-        backgroundColor: "#333232",
+            color: '#000',
+            fontSize: 18,
+            bold: true,
+        },
+        hAxis: {
+            textStyle: {
+                color: "#000",
+                bold: true
+            }
+        },
+        vAxis: {
+            textStyle: {
+                color: "#000",
+                bold: true
+            }
+        },
+        legend: { textStyle: { color: "#000" } },
+        backgroundColor: "#fff",
         borderRadius: "20px",
-        Title: {color:"#fff"}
+        Title: { color: "#fff" }
     };
 
     return (
@@ -92,39 +106,40 @@ export const Informations = () => {
                     <h2>Gerencie seu estoque</h2>
                 </div>
                 <div className="flex">
-                    <ProductForm onSave={loadProducts}/>
-                    <CategoryForm/>
-                    <CategoriesList/>
+                    <ProductForm />
+                    <CategoryForm />
+                    <CategoriesList />
                 </div>
             </div>
 
+
             <div className="flex justify-center mt-0 m-20 max-sm:flex-col max-md:m-0 max-md:p-2  gap-2">
-                <div className="shadow-xl/20 w-120 flex justify-around items-center h-40 rounded-md max-md:w-full max-md:m-0 bg-second">
+                <div className="shadow-lg/20 w-120 flex justify-around items-center h-40 rounded-md max-md:w-full max-md:m-0 ">
                     <div>
-                        <p className="text-xl text-gray-400">Variedades de Produtos</p>
-                        {loading ? <p>Carregando...</p> : <p className="font-bold text-xl">{products.length}</p>}
+                        <p className="text-lg text-gray-400">Valor Bruto</p>
+                        <p className="font-bold text-xl">{brlFormat(gross)}</p>
                     </div>
                     <p><FaBox color="#946d46" size={40} className="icon-card" /></p>
                 </div>
-                <div className="shadow-xl/20 w-120 flex justify-around items-center h-40 rounded-md
-                 max-md:w-full max-md:m-0 bg-second">
+                <div className="shadow-lg/20 w-120 flex justify-around items-center h-40 rounded-md
+                 max-md:w-full max-md:m-0">
                     <div>
-                        <p className="text-xl text-gray-400">Categorias</p>
-                        <p className="font-bold text-xl">{categories.length}</p>
+                        <p className="text-lg text-gray-400">Valor Total Para venda</p>
+                        <p className="font-bold text-xl">{brlFormat(totalValue)}</p>
                     </div>
                     <p><MdCategory size={40} color="green" className="icon-card" /></p>
                 </div>
-                <div className="shadow-xl/20 w-120 flex justify-around items-center h-40 rounded-md max-md:w-full max-md:m-0 bg-second">
+                <div className="shadow-lg/20 w-120 flex justify-around items-center h-40 rounded-md max-md:w-full max-md:m-0 ">
                     <div>
-                        <p className="text-xl text-gray-400">Valor em Estoque</p>
-                        <p className="font-bold text-xl">R$ {totalValue}</p>
+                        <p className="text-lg text-gray-400">Margem de lucro</p>
+                        <p className="font-bold text-xl">{brlFormat(profitMargin)}</p>
                     </div>
                     <TbCashRegister size={40} color="blue" className="icon-card" />
 
                 </div>
-                <div className="shadow-xl/20 w-120 flex justify-around items-center h-40 rounded-md max-md:w-full max-md:m-0 bg-second">
+                <div className="shadow-lg/20 w-120 flex justify-around items-center h-40 rounded-md max-md:w-full max-md:m-0 ">
                     <div>
-                        <p className="text-xl text-gray-400">Produtos em Estoque</p>
+                        <p className="text-lg text-gray-400">Produtos em Estoque</p>
                         <p className="font-bold text-xl">{allProducts}</p>
                     </div>
                     <RiProductHuntLine size={40} color="red" className="icon-card" />

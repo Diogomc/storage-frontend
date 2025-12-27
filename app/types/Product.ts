@@ -5,8 +5,9 @@ export type Product = {
     batch:string
     productBrand:string
     supplierName:string
-    price:number
+    salePrice:number
     availableQuantity:number
     categoryId: number
     isPerishable:boolean
+    purchasePrice:number
 }
