@@ -110,7 +110,7 @@ export const ProductsList = () => {
                     <div className="modal-info-container">
                         <p className="modal-product-infos">Quantidade disponível: {selectedProduct?.availableQuantity}</p>
                         <p className="modal-product-infos">Data de Validade: {selectedProduct?.expirationDate}</p>
-                        <p className="modal-product-infos">Preço da unidade: {selectedProduct?.price}</p>
+                        <p className="modal-product-infos">Preço da unidade: {selectedProduct?.salePrice}</p>
                         <p className="modal-product-infos">Lote: {selectedProduct?.batch}</p>
                         <p className="modal-product-infos">Marca: {selectedProduct?.productBrand}</p>
                         <p className="modal-product-infos">Fornecedor: {selectedProduct?.supplierName}</p>

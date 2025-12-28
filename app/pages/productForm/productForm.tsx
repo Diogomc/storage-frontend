@@ -17,8 +17,8 @@ export const ProductForm = ({ onSave }: Props) => {
   const [date, setDate] = useState("");
   const [brand, setBrand] = useState("");
   const [supplier, setSupplier] = useState("");
-  const [purchasePrice, setPurchasePrice] = useState(0); // corrigido
-  const [salePrice, setSalePrice] = useState(0); // adicionado
+  const [purchasePrice, setPurchasePrice] = useState(0); 
+  const [salePrice, setSalePrice] = useState(0); 
   const [quantity, setQuantitity] = useState(0);
   const [isPerishable, setIsPerishable] = useState<boolean>(false);
   const [categoryId, setCategoryId] = useState("");
@@ -132,6 +132,8 @@ export const ProductForm = ({ onSave }: Props) => {
                 step="any"
                 onChange={(e) => setPurchasePrice(e.target.valueAsNumber)}
               />
+
+
               <p>Preço de Venda</p>
               <input
                 type="number"
