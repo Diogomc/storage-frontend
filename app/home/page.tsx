@@ -35,6 +35,8 @@ export default function Home() {
         infinite
         autoPlaySpeed={3000}
         arrows={false}
+        showDots={true}
+        dotListClass="bg-white"
       >
         <div className="h-160 w-full max-md:h-150 text-background">
 
@@ -62,6 +64,7 @@ export default function Home() {
           <img src="laptop.jpg" alt="" className="h-full w-full object-top object-cover " />
         </div>
       </Carousel>
+      
       <h2 className="text-center p-20 text-4xl max-md:text-2xl w-full">
         <Typewriter
           text={"Nossas Soluções..."}

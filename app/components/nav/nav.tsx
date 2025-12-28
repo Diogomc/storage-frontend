@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
 import { MdMenu } from "react-icons/md"
-import { AiOutlineHome } from "react-icons/ai";
-
+import { GoHome } from "react-icons/go";
+import { GoBook } from "react-icons/go";
+import { CiPhone } from "react-icons/ci";
+import { TbInfoHexagon } from "react-icons/tb";
+import { GoPerson } from "react-icons/go";
 export const Nav = () => {
   const [open, setOpen] = useState(true)
 
@@ -14,11 +17,11 @@ export const Nav = () => {
       initial={{ y: -50 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex justify-around nav max-md:flex-col bg-second sticky z-999 h-16 w-full max-md:h-full text-background">
+      className="flex justify-around nav max-md:flex-col sticky z-999 h-16 w-full max-md:h-full shadow-2xl/10">
 
       <ul className="flex items-center justify-between flex-row-reverse ">
         <li className="max-md:p-2">
-          <img className="w-12" src="/logo.jpg" alt="Logo" />
+          <p className="tracking-widest font-bold">StockLab</p>
         </li>
         <li className="max-md:p-2">
           <MdMenu
@@ -29,20 +32,25 @@ export const Nav = () => {
         </li>
       </ul>
 
-      <ul className={`flex items-center max-md:flex-col bg-second text-lg ${open ? 'max-md:hidden' : ''}`}>
-        <li className="p-2 flex items-center">
-          <AiOutlineHome /><Link href="/home" className="p-2"> Home</Link>
+      <ul className={`flex items-center max-md:flex-col  text-lg ${open ? 'max-md:hidden' : ''}`}>
+        <li className=" p-2 flex items-center hover:border-b hover:border-blue-800">
+          <GoHome size={20} /><Link href="/home" className="p-2"> Home</Link>
         </li>
-        <li className="p-2">
-          <Link href="/sobre" className="p-2">Sobre</Link>
+        <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
+          <TbInfoHexagon size={20} /><Link href="/sobre" className="p-2">Sobre</Link>
         </li>
-        <li className="p-2"><Link href="/treinamento" className="p-2">Treinamento</Link></li>
-        <li className="p-2"><Link href="/contato" className="p-2">Contato</Link></li>
+        <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
+          <GoBook size={20} /><Link href="/treinamento" className="p-2">Treinamento</Link>
+        </li>
       </ul>
 
-      <ul className={`flex items-center max-md:flex-col bg-second text-lg max-md:p-6 ${open ? 'max-md:hidden' : ''}`}>
-        <li className="p-2"><Link href="/login" className="p-2">Entrar</Link></li>
-        <li className="p-2"><Link href="/register" className="p-2">Cadastrar</Link></li>
+      <ul className={`flex items-center max-md:flex-col  text-lg max-md:p-6 ${open ? 'max-md:hidden' : ''}`}>
+        <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
+          <GoPerson size={20} /><Link href="/login" className="p-2">Conta</Link>
+        </li>
+        <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
+          <CiPhone size={20}/><Link href="/register" className="p-2">Contato</Link>
+        </li>
       </ul>
 
     </motion.nav>
