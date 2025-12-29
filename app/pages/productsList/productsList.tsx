@@ -69,14 +69,14 @@ export const ProductsList = () => {
 
     return (
         <div>
-            <div className="m-20 max-md:m-0">
+            <div className="m-20 max-md:m-2 ">
                 <p className="text-4xl text-center p-10 m-10">Produtos em Estoque</p>
                 <div className="">
                     <table className="table-auto w-full shadow-xl/20 border-gray-100 border-1 text-center rounded-md">
                         <thead >
                             <tr>
-                                <th>Produto</th>
-                                <th>Validade</th>
+                                <th className="max-md:hidden">Produto</th>
+                                <th className="max-md:hidden">Validade</th>
                                 <th className="max-md:hidden">Preço de Venda</th>
                                 <th className="max-md:hidden">Quantidade</th>
                                 <th className="max-md:hidden ">
@@ -94,7 +94,7 @@ export const ProductsList = () => {
                                             <p className="font-bold">#{p.productId}</p>
                                         </div>
                                     </td>
-                                    <td className="px-10 py-4">{p.expirationDate}</td>
+                                    <td className="px-10 py-4 max-md:hidden">{p.expirationDate}</td>
                                     <td className="px-10 max-md:hidden">R${p.salePrice}</td>
                                     <td className="px-10 max-md:hidden">{p.availableQuantity}</td>
                                     <td className="px-10">

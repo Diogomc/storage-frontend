@@ -46,7 +46,7 @@ export const Nav = () => {
 
       <ul className={`flex items-center max-md:flex-col  text-lg max-md:p-6 ${open ? 'max-md:hidden' : ''}`}>
         <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
-          <GoPerson size={20} /><Link href="/login" className="p-2">Conta</Link>
+          <GoPerson size={20} /><Link href="/account" className="p-2">Conta</Link>
         </li>
         <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
           <CiPhone size={20}/><Link href="/register" className="p-2">Contato</Link>
