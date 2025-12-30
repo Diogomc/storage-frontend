@@ -22,7 +22,7 @@ const responsive = {
   mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="bg-background">
       <nav>

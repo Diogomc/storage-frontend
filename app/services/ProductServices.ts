@@ -10,6 +10,10 @@ export const ProductServices = {
         const { data } = await api.get<Product>(`/Product/${id}`)
         return data;
     },
+    getByName: async (name:string): Promise<Product> => {
+        const {data} = await api.get<Product>(`/Product/${name}`)
+        return data;
+    },
     getTotalQuantity: async (): Promise<number> => {
         const { data } = await api.get<number>("Product/TotalQuantity")
         return data;

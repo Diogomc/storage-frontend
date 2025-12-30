@@ -69,10 +69,10 @@ export const ProductsList = () => {
 
     return (
         <div>
-            <div className="m-20 max-md:m-2 ">
+            <div className="m-20 max-md:m-0 ">
                 <p className="text-4xl text-center p-10 m-10">Produtos em Estoque</p>
                 <div className="">
-                    <table className="table-auto w-full shadow-xl/20 border-gray-100 border-1 text-center rounded-md">
+                    <table className="table-auto w-full shadow-xl/20 border-gray-100 border text-center rounded-md">
                         <thead >
                             <tr>
                                 <th className="max-md:hidden">Produto</th>
@@ -119,7 +119,6 @@ export const ProductsList = () => {
                     </div>
                 </Modal>
             </div>
-            <Footer />
         </div>
     );
 };

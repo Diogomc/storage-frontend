@@ -6,7 +6,7 @@ const Account = () => {
     return (
         <div>
             <Nav />
-            <div className="flex flex-col items-center justify-center mt-30 ">
+            <div className="flex flex-col items-center justify-center mt-30 max-md:mt-20">
                 <div className="text-center p-5">
                     <p className="text-4xl">Bem vindo de volta</p>
                     <p className="text-gray-500">Por favor, entre com suas credenciais</p>

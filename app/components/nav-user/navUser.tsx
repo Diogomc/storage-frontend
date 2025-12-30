@@ -9,7 +9,7 @@ import { GoBook } from "react-icons/go";
 import { CiPhone } from "react-icons/ci";
 import { TbInfoHexagon } from "react-icons/tb";
 import { GoPerson } from "react-icons/go";
-export const Nav = () => {
+export const NavUser = () => {
   const [open, setOpen] = useState(true)
 
   return (
@@ -37,10 +37,10 @@ export const Nav = () => {
           <GoHome size={20} /><Link href="/home" className="p-2"> Home</Link>
         </li>
         <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
-          <TbInfoHexagon size={20} /><Link href="/sobre" className="p-2">Sobre</Link>
+          <TbInfoHexagon size={20} /><Link href="/dashboard" className="p-2">Dashboard</Link>
         </li>
         <li className="p-2 flex items-center hover:border-b hover:border-blue-800">
-          <GoBook size={20} /><Link href="/treinamento" className="p-2">Treinamento</Link>
+          <GoBook size={20} /><Link href="/Products" className="p-2">Produtos</Link>
         </li>
       </ul>
 
