@@ -59,7 +59,7 @@ const Account = () => {
                         <div className="flex flex-col items-center ml-20
                             max-md:ml-0">
                             <h1 className="text-4xl font-bold p-5
-                                max-md:text-3xl">Não possui uma Conta?</h1>
+                                max-md:text-3xl max-md:text-center">Não possui uma Conta?</h1>
                             <p className="w-lg text-center p-4 text-gray-200 text-lg
                                 max-md:w-full max-md:p-8"> Registre uma conta para a sua empresa, e aproveite todos os nossos benefícios</p>
                             <Button name="Criar Conta" className="w-40" />
