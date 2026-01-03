@@ -45,12 +45,12 @@ export const ProductForm = ({ onSave }: Props) => {
       expirationDate: dateExpire,
       productBrand: brand,
       supplierName: supplier,
-      entryDate: entryDate,
       categoryId: Number(categoryId),
       availableQuantity: quantity,
       purchasePrice,
       salePrice,
       isPerishable,
+      entryDate: entryDate
     });
 
     setName("");

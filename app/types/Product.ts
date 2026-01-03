@@ -10,4 +10,5 @@ export type Product = {
     categoryId: number
     isPerishable:boolean
     purchasePrice:number
+    entryDate:string
 }
