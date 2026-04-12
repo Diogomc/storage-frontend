@@ -15,31 +15,27 @@ export const ProductServices = {
         return data;
     },
     getTotalQuantity: async (): Promise<number> => {
-        const { data } = await api.get<number>("Product/TotalQuantity")
+        const { data } = await api.get<number>("ProductReports/TotalQuantity")
         return data;
     },
     getTotalValue: async (): Promise<number> => {
-        const { data } = await api.get<number>("Product/TotalValue")
+        const { data } = await api.get<number>("ProductReports/TotalValue")
         return data;
     },
     getTotalGrossValue: async (): Promise<number> => {
-        const { data } = await api.get<number>("Product/GrossValue")
+        const { data } = await api.get<number>("ProductReports/GrossValue")
         return data;
     },
     getProfitMargin: async (): Promise<number> => {
-        const { data } = await api.get<number>("Product/ProfitMargin")
-        return data;
-    },
-    getCloseExpirationPerishables: async (): Promise<Product[]> => {
-        const { data } = await api.get<Product[]>("Product/CloseExpirationPerishables")
+        const { data } = await api.get<number>("ProductReports/ProfitMargin")
         return data;
     },
     getCloseToExpiration: async (): Promise<Product[]> => {
-        const { data } = await api.get<Product[]>("Product/CloseExpiration")
+        const { data } = await api.get<Product[]>("ProductReports/CloseExpiration")
         return data;
     },
     getExpiredProducts: async (): Promise<Product[]> => {
-        const { data } = await api.get<Product[]>("/Product/Expireds")
+        const { data } = await api.get<Product[]>("/ProductReports/Expireds")
         return data;
     },
     create: async (product: Product): Promise<Product> => {
