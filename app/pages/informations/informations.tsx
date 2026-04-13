@@ -4,6 +4,7 @@ import { CategoryServices } from "@/app/services/CategoryServices";
 import { ProductServices } from "@/app/services/ProductServices";
 import { Category } from "@/app/types/Category";
 import { Product } from "@/app/types/Product";
+import { LiaIndustrySolid } from "react-icons/lia";
 
 export const Informations = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -13,6 +14,12 @@ export const Informations = () => {
     const [gross, setGross] = useState<number>();
     const [profitMargin, setProfitMargin] = useState<number>();
     const [chartData, setChartData] = useState<{ name: string; quantity: number }[]>([]);
+
+    const today = () => {
+        const date = new Date();
+
+        return date.toLocaleDateString('pt-BR', { year: "numeric", month: "short", day: "numeric" })
+    }
 
     const loadAllProducts = async () => {
         const data = await ProductServices.getTotalQuantity();
@@ -83,37 +90,39 @@ export const Informations = () => {
 
     return (
         <div>
-            <div className="flex justify-between items-center mt-8 m-20 mb-0 p-10 max-md:flex-col max-md:m-0">
-                <div className="max-md:p-8 max-md:text-center ">
-                    <h1 className="text-4xl font-bold text-(--main-color)">Dashboard</h1>
-                    <h2>Gerencie seu estoque</h2>
-                </div>
+            <div className="m-8 ml-40
+             max-md:text-center max-md:m-0 max-md:ml-0 max-md:p-9">
+                <h1 className="text-(--main-color) text-4xl font-bold
+                ">Dashboard</h1>
             </div>
 
-            <div className="bg-white flex justify-around h-44 mt-0 m-20 max-sm:flex-col border border-gray-100 rounded-md shadow-lg/20
-            max-md:m-0 max-md:p-2 max-md:h-full text-center">
-                <div className="w-full flex justify-center items-center border-r border-gray-300 my-2 border-dashed max-md:w-full max-md:m-0">
+
+            <div className="bg-white flex justify-around h-44 mx-20 my-10 border border-gray-100 rounded-md
+            max-md:m-0 max-md:p-2 max-md:h-full text-center max-md:bg-background max-md:border-none gap-2">
+
+
+                <div className="w-full flex justify-center items-center border-r border-gray-300 my-2 border-dashed 
+                max-md:w-full max-md:m-0 max-md:border-gray-200 max-md:border max-md:border-double max-md:rounded-md">
                     <div>
-                        <p className="text-lg">Valor Bruto em Depósito</p>
-                        <p className="font-bold text-3xl text-(--main-color)">{brlFormat(gross)}</p>
+                        <p className="max-md:text-sm">Valor Investido</p>
+                        <p className="font-bold text-3xl text-(--main-color) max-md:text-lg">{brlFormat(gross)}</p>
+                        <p className="text-gray-500 text-sm max-md:text-xs">{today()}</p>
                     </div>
                 </div>
-                <div className="w-full flex justify-center items-center border-r border-gray-300 my-2 border-dashed max-md:w-full max-md:m-0">
+                <div className="w-full flex justify-center items-center border-r border-gray-300 my-2 border-dashed max-md:w-full 
+                max-md:m-0 max-md:border-gray-200 max-md:border max-md:border-double max-md:rounded-md">
                     <div>
-                        <p className="text-lg">Valor Total Para Venda</p>
-                        <p className="font-bold text-3xl text-(--main-color)">{brlFormat(totalValue)}</p>
+                        <p className="max-md:text-sm">Valor Total Para Venda</p>
+                        <p className="font-bold text-3xl text-(--main-color) max-md:text-lg">{brlFormat(totalValue)}</p>
+                        <p className="text-gray-500 text-sm max-md:text-xs">Margem de lucro de {brlFormat(profitMargin)}</p>
                     </div>
                 </div>
-                <div className="w-full flex justify-center items-center border-r border-gray-300 my-2 border-dashed max-md:w-full max-md:m-0">
+                <div className="w-full flex justify-center items-center my-2 max-md:w-full 
+                max-md:m-0 max-md:border-gray-200 max-md:border max-md:border-double max-md:rounded-md" >
                     <div>
-                        <p className="text-lg">Margem de lucro</p>
-                        <p className="font-bold text-3xl text-(--main-color)">{brlFormat(profitMargin)}</p>
-                    </div>
-                </div>
-                <div className="w-full flex justify-center items-center my-2 max-md:w-full max-md:m-0">
-                    <div>
-                        <p className="text-lg">Produtos em Estoque</p>
-                        <p className="font-bold text-3xl text-(--main-color)">{allProducts}</p>
+                        <p className="max-md:text-sm">Produtos em Estoque</p>
+                        <p className="font-bold text-3xl text-(--main-color) max-md:text-lg">{allProducts}</p>
+                        <p className="text-gray-500 text-sm max-md:text-xs">{products.map((p) => p.supplierName).length} Fornecedores</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +131,7 @@ export const Informations = () => {
             <div className="flex justify-center h-[400px] gap-8 max-md:flex-col
             max-md:h-full">
 
-                <div className="bg-white border-gray-100 shadow-lg/20 flex flex-col justify-center rounded-md p-10 w-[1330px]
+                <div className="bg-white border border-gray-100 flex flex-col justify-center rounded-md p-10 w-[1330px]
                 max-md:w-full h-[400px]">
                     <p className="text-left pb-8 text-(--main-color)">Quantidade de produtos por categoria</p>
 
@@ -137,14 +146,15 @@ export const Informations = () => {
                         </LineChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="bg-white border border-gray-100 shadow-lg/20 flex flex-col rounded-md w-96
+                <div className="bg-white border border-gray-100 flex flex-col rounded-md w-96
                 max-md:w-full">
                     <p className="text-(--main-color) text-left text-xl m-8">Principais fornecedores</p>
                     <div>
                         {products.map((p) => (
-                            <ul className="flex items-center border-b border-gray-200 justify-around text-left" key={p.productId}>
+                            <ul className="flex items-center border-b border-gray-100 justify-between text-left p-4" key={p.productId}>
+                                <li className="bg-(--main-color) rounded-md"><LiaIndustrySolid size={30} color="white"/></li>
                                 <li className="mx-3 text-lg  p-2">{p.supplierName}</li>
-                                <li>Produtos: {p.availableQuantity}</li>
+                                <li>{p.availableQuantity} Produtos</li>
                             </ul>
                         ))}
                     </div>
