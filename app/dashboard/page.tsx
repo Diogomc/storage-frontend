@@ -1,15 +1,27 @@
 "use client"
+import { useEffect, useState } from "react";
+import { ProductServices } from "../services/ProductServices";
+import { Product } from "../types/Product";
 import { NavUser } from "../components/nav-user/navUser";
-import { ExpiredProduct } from "../pages/expiredProducts/expiredProduct";
-import { Informations } from "../pages/informations/informations";
-import { ProductsList } from "../pages/productsList/productsList"
+import { Informations } from "./dashboardComponents/informations";
+
+
 
 const Dashboard = () => {
+
+    const [products, setProducts] = useState<Product[]>([])
+
+    const loadProducts  = async () =>{
+        const data = await ProductServices.getAll();
+        setProducts(data);
+    }
+    useEffect(() => {
+        loadProducts()
+    }, [])
     return(
         <div>
             <NavUser/>
             <Informations/>
-            <ExpiredProduct/>
         </div>
     )
 }

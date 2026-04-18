@@ -50,7 +50,7 @@ export const NavUser = () => {
             <p className="text-gray-400 text-sm">Home</p>
           </li>
           <li className="flex flex-col items-center">
-            <p><FaBoxOpen size={30} /></p>
+            <Link href={"/Products"}><p><FaBoxOpen size={30} /></p></Link>
             <p className="text-gray-400 text-sm">Produtos</p>
           </li>
           <li className="flex flex-col items-center ">

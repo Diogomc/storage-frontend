@@ -12,8 +12,8 @@ type Props = {
 
 export const Button = ({link, name, icon:Icon, onClick, className} : Props) => {
     return(
-        <button className={`${className} cursor-pointer bg-blue-800 p-2 m-2 rounded-md
-         hover:bg-blue-600 hover:transition duration-400 text-background `} onClick={onClick}>
+        <button className={`${className} cursor-pointer bg-main-color p-2 m-2 rounded-md
+         hover:bg-purple-600 hover:transition duration-400 text-background `} onClick={onClick}>
             <a href={link} className={`flex items-center justify-center`}>{Icon && <Icon size={20}/>}{name}</a></button>
     )
 }
